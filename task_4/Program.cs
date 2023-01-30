@@ -10,15 +10,17 @@ int b = Convert.ToInt32(Console.ReadLine());
 Console.Write("input number c: ");
 int c = Convert.ToInt32(Console.ReadLine());
 
-if (a > b & a > c) {
-    Console.Write($"max -> {a}");
-}
-else if (b > c & b > a) {
-    Console.Write($"max -> {b}");
-}
-else if (c > a & c > b) {
-    Console.Write($"max -> {c}");
+int max = a;
+
+if (a == b & b == c) {
+    Console.Write($"numbers are equal\nmax -> {max}");
 }
 else {
-    Console.Write("numbers are equal");
+    if (b > max) {
+        max = b;
+    }
+    if (c > max) {
+        max = c;
+    }
+    Console.Write($"max -> {max}");
 }
